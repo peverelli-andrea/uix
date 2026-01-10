@@ -1,0 +1,18 @@
+{
+    "name": "peverelliandrea/uix",
+    "description": "A collection of UI/UX components for PHP with HTMX integration",
+    "type": "library",
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "PeverelliAndrea\\Uix\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Peverelli Andrea",
+            "email": "ndrpeverelli@gmail.com"
+        }
+    ],
+    "require": {}
+}
