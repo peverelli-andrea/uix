@@ -20,18 +20,11 @@ final class Span
 	{
 		return new Render(
 			css: [
-				<<<CSS
-				.uix-atoms-span {
-					font-family: var(--typography-{$role->value}-font-family);
-					fontsize: var(--typography-{$role->value}-font-size);
-					fony-weight: var(--typography-{$role->value}-font-weight);
-					letter-spacing: var(--typography-{$role->value}-letter-spacing);
-				}
-				CSS,
+				self::getTypographyCss(role: $role),
 				self::getColorCss(color: $color, css_property: CssProperty::COLOR),
 			]
 			html: <<<HTML
-			<span class="uix-atoms-span uix-palette-{$color->value}-color">$content</span>
+			<span class="uix-typography-{$role->value} uix-palette-{$color->value}-color">$content</span>
 			HTML,
 		);
 	}
