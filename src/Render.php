@@ -5,7 +5,8 @@ namespace PeverelliAndrea\Uix;
 final class Render
 {
 	final public function __construct(
-		public ?string $css = null,
+		/** @var null|string[] $css */
+		public ?array $css = null,
 		public ?string $html = null,
 	) {}
 }

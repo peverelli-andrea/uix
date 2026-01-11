@@ -31,7 +31,7 @@ final class Span
 				self::getColorCss(color: $color, css_property: CssProperty::COLOR),
 			]
 			html: <<<HTML
-			<span class="uix-atoms-span">$content</span>
+			<span class="uix-atoms-span uix-palette-{$color->value}-color">$content</span>
 			HTML,
 		);
 	}
