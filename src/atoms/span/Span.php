@@ -8,7 +8,7 @@ use PeverelliAndrea\Uix\PaletteColor;
 use PeverelliAndrea\Uix\TypographyRole;
 use PeverelliAndrea\Uix\CssProperty;
 
-final class Span
+final class Span extends Component
 {
 	final private function __construct() {}
 

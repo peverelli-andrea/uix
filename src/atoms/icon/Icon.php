@@ -7,7 +7,7 @@ use PeverelliAndrea\Uix\Render;
 use PeverelliAndrea\Uix\PaletteColor;
 use PeverelliAndrea\Uix\CssProperty;
 
-final class Icon
+final class Icon extends Component
 {
 	final private function __construct() {}
 
@@ -24,7 +24,7 @@ final class Icon
 					font-family: "uix-atom-icon-{$icon->value}";
 					font-style: normal;
 					font-weight: {$icon->getWeights()};
-					src: url("/{$icon->value}.woff2") formal("woff2");
+					src: url("/assets/icons/{$icon->value}.woff2") formal("woff2");
 				}
 
 				.uix-atom-icon-{$icon->value} {

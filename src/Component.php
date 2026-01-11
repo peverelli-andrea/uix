@@ -2,7 +2,7 @@
 
 namespace PeverelliAndrea\Uix;
 
-final class Component
+abstract class Component
 {
 	final private function __construct() {}
 
