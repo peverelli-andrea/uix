@@ -38,36 +38,11 @@ abstract class Component
 	final protected static function getTypographyCss(TypographyRole $role): string
 	{
 		return <<<CSS
-		@font-face {
-			font-family: var(--typography-{$role->value}-font-family);
-			font-style: normal;
-			src: url("/assets/fonts/{$role->value}.ttf") format("truetype");
-		}
-
-		@font-face {
-			font-family: var(--typography-{$role->value}-font-family);
-			font-style: italic;
-			src: url("/assets/fonts/{$role->value}-italic.ttf") format("truetype");
-		}
-
-		@font-face {
-			font-family: var(--typography-{$role->value}-font-family);
-			font-style: normal;
-			font-weight: 700;
-			src: url("/assets/fonts/{$role->value}-bold.ttf") format("truetype");
-		}
-
-		@font-face {
-			font-family: var(--typography-{$role->value}-font-family);
-			font-style: italic;
-			font-weight: 700;
-			src: url("/assets/fonts/{$role->value}-bold-italic.ttf") format("truetype");
-		}
-
 		.uix-typography-{$role->value} {
-			font-family: var(--typography-{$role->value}-font-family);
-			fontsize: var(--typography-{$role->value}-font-size);
-			fony-weight: var(--typography-{$role->value}-font-weight);
+			font-family: "{$role->value}";
+			font-size: var(--typography-{$role->value}-font-size);
+			font-weight: var(--typography-{$role->value}-font-weight);
+			line-height: var(--typography-{$role->value}-line-height);
 			letter-spacing: var(--typography-{$role->value}-letter-spacing);
 		}
 		CSS;
