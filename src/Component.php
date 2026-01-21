@@ -6,10 +6,18 @@ abstract class Component
 {
 	final private function __construct() {}
 
-	final protected static function getColorCss(PaletteColor $color, CssProperty $css_property): string
+	final protected static function getColorCss(
+		PaletteColor $color,
+		CssProperty $css_property,
+		?string $media_query = null,
+	): string
 	{
+		if($media_query === null) {
+			$media_query = ".uix-palette-{$color->value}-{$css_property->value}";
+		}
+
 		return <<<CSS
-		.uix-palette-{$color->value}-{$css_property->value} {
+		{$media_query} {
 			{$css_property->value}: var(--palette-light-default-{$color->value});
 
 			@media (prefers-contrast: less) {
@@ -20,15 +28,15 @@ abstract class Component
 				{$css_property->value}: var(--palette-light-more-{$color->value});
 			}
 			
-			@media (color-scheme: dark) {
+			@media (prefers-color-scheme: dark) {
 				{$css_property->value}: var(--palette-dark-default-{$color->value});
 			}
 
-			@media (color-scheme: dark) and (prefers-contrast: less) {
+			@media (prefers-color-scheme: dark) and (prefers-contrast: less) {
 				{$css_property->value}: var(--palette-dark-less-{$color->value});
 			}
 
-			@media (color-scheme: dark) and (prefers-contrast: more) {
+			@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
 				{$css_property->value}: var(--palette-dark-more-{$color->value});
 			}
 		}

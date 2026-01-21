@@ -22,7 +22,7 @@ final class Span extends Component
 				self::getColorCss(color: $color, css_property: CssProperty::COLOR),
 			],
 			html: <<<HTML
-			<span class="uix-typography-{$role->value} uix-palette-{$color->value}-color">$content</span>
+			<span class="uix-atom-span uix-typography-{$role->value} uix-palette-{$color->value}-color">$content</span>
 			HTML,
 		);
 	}
